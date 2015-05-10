@@ -76,7 +76,11 @@
 		
 		if( prompt ){
 			ev.preventDefault();
-			show();
+			
+			if( form.find('.form-invalid').length === 0 ){
+				show();	
+			}
+			
 			return false;
 		}
 		
