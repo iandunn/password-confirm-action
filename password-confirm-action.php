@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Password Confirm Action
  * Plugin URI:  http://github.com/stephenharris/password-confirm-action
- * Description: Prompts the user for their password whenever they try to perform an action which could be used by an attacker to escalate priveleges or engineer future access.
+ * Description: Prompts the user for their password whenever they try to perform an action which could be used by an attacker to escalate privileges or engineer future access.
  * Version:     0.1.0
  * Author:      Stephen Harris
  * Author URI:  stephenharris.info
@@ -150,7 +150,7 @@ class PasswordConfirmAction {
 	 * Determines whether a user should be prompted for the password
 	 * $data is an array of submitted data (by the user). This function insepcts that
 	 * submitted data to see if any changes would warrant a password challnege (i.e.
-	 * anything that could escelate the priveleges of a user, create a user or change
+	 * anything that could escelate the privileges of a user, create a user or change
 	 * a user's password. This includes changing an e-mail as that may be used to
 	 * chang a user's password via the forgot password feature.
 	 *

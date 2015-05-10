@@ -5,7 +5,7 @@ Tested up to: 4.2.2
 Stable tag: 0.1.0
 License: GPLv2 or later
 
-Prompts the user for their password whenever they try to perform an action which could be used by an attacker to escalate priveleges or engineer future access.
+Prompts the user for their password whenever they try to perform an action which could be used by an attacker to escalate privileges or engineer future access.
 
 
 == Description ==
