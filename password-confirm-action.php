@@ -70,8 +70,8 @@ class PasswordConfirmAction {
 
 		wp_localize_script( 'password-confirm-action', 'pca', array(
 			'user' => array(
-				'email' => $user ? $user->user_email : false,
-				'roles' => $user ? $user->roles : array(),
+				'email' => ( $user instanceof WP_User ) ? $user->user_email : false,
+				'roles' => ( $user instanceof WP_User ) ? $user->roles : array(),
 			)
 		) );
 
