@@ -2,10 +2,10 @@
 **Contributors:** stephenharris  
 **Requires at least:** 4.2.2  
 **Tested up to:** 4.2.2  
-**Stable tag:** 0.1.0  
+**Stable tag:** 0.1.1  
 **License:** GPLv2 or later  
 
-Prompts the user for their password whenever they try to perform an action which could be used by an attacker to escalate priveleges or engineer future access.
+Prompts the user for their password whenever they try to perform an action which could be used by an attacker to escalate privileges or engineer future access.
 
 
 ## Description ##
@@ -46,6 +46,8 @@ as outlined in [https://codex.wordpress.org/Editing_wp-config.php#Disable_plugin
 1. Use the plugin and [report any issues](http://github.com/stephenharris/password-confirm-action/issues).
 2. Find an [unassigned issue](http://github.com/stephenharris/password-confirm-action/issues) and start working on it (please make PRs to the develop branch).
 
+If you have an expertise in accessibility I would welcome any suggestions or improvements. Or if you encounter any issues regarding accessibility please do report these.   
+
 ### A special thanks ###
 
 A special thanks to Human Made whose [Require Password](https://github.com/humanmade/hm-require-password) plugin (written by Jenny Wong) served as an inspiration for this plugin.
@@ -62,6 +64,10 @@ A special thanks to Human Made whose [Require Password](https://github.com/human
 
 
 ## Changelog ##
+
+### 0.1.1 ###
+* The 0.1.0 version didn't actually work...
+* Fixes modal hiding highlighted invalid fields (See [#1](https://github.com/stephenharris/password-confirm-action/issues/1)).
 
 ### 0.1.0 ###
 * First release

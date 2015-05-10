@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Password Confirm Action
  * Plugin URI:  http://github.com/stephenharris/password-confirm-action
- * Description: Prompts the user for their password whenever they try to perform an action which could be used by an attacker to escalate priveleges or engineer future access.
- * Version:     0.1.0
+ * Description: Prompts the user for their password whenever they try to perform an action which could be used by an attacker to escalate privileges or engineer future access.
+ * Version:     0.1.1
  * Author:      Stephen Harris
  * Author URI:  stephenharris.info
  * License:     GPLv2+
@@ -70,8 +70,8 @@ class PasswordConfirmAction {
 
 		wp_localize_script( 'password-confirm-action', 'pca', array(
 			'user' => array(
-				'email' => $user ? $user->user_email : false,
-				'roles' => $user ? $user->roles : array(),
+				'email' => ( $user instanceof WP_User ) ? $user->user_email : false,
+				'roles' => ( $user instanceof WP_User ) ? $user->roles : array(),
 			)
 		) );
 
@@ -134,13 +134,15 @@ class PasswordConfirmAction {
 
 		if ( self::should_prompt_for_password( $_POST, $user ) ){
 
+			$current_user = wp_get_current_user();
+
 			if ( empty( $_POST['current_user_pass'] ) && $user ){
 				$errors->add( 'confirm-password', __( 'You must confirm your password to update this user.', 'password-confirm-action' ) );
 
 			}elseif ( empty( $_POST['current_user_pass'] ) && ! $user ){
 				$errors->add( 'confirm-password', __( 'You must confirm your password to create a user.', 'password-confirm-action' ) );
 
-			}elseif ( ! wp_check_password( $data['current_user_pass'], $current_user->user_pass ) ){
+			}elseif ( ! wp_check_password( $_POST['current_user_pass'], $current_user->user_pass ) ){
 				$errors->add( 'confirm-password', __( 'The current password you provided was not correct.', 'password-confirm-action' ) );
 			}
 		}
@@ -150,7 +152,7 @@ class PasswordConfirmAction {
 	 * Determines whether a user should be prompted for the password
 	 * $data is an array of submitted data (by the user). This function insepcts that
 	 * submitted data to see if any changes would warrant a password challnege (i.e.
-	 * anything that could escelate the priveleges of a user, create a user or change
+	 * anything that could escelate the privileges of a user, create a user or change
 	 * a user's password. This includes changing an e-mail as that may be used to
 	 * chang a user's password via the forgot password feature.
 	 *
@@ -159,8 +161,6 @@ class PasswordConfirmAction {
 	 * @return bool                     True if the user should be prompted for a password. False otherwise.
 	 */
 	static function should_prompt_for_password( $data, $edited_user = null ){
-
-		$current_user = wp_get_current_user();
 
 		$prompt = false;
 
