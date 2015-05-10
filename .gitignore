@@ -1,0 +1,9 @@
+node_modules
+build
+*~
+.*
+!.gitignore
+*.min.js
+*.min.css
+*.pot
+*.mo
