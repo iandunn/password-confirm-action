@@ -3,7 +3,7 @@
  * Plugin Name: Password Confirm Action
  * Plugin URI:  http://github.com/stephenharris/password-confirm-action
  * Description: Prompts the user for their password whenever they try to perform an action which could be used by an attacker to escalate privileges or engineer future access.
- * Version:     0.1.0
+ * Version:     0.1.1
  * Author:      Stephen Harris
  * Author URI:  stephenharris.info
  * License:     GPLv2+
