@@ -134,13 +134,15 @@ class PasswordConfirmAction {
 
 		if ( self::should_prompt_for_password( $_POST, $user ) ){
 
+			$current_user = wp_get_current_user();
+
 			if ( empty( $_POST['current_user_pass'] ) && $user ){
 				$errors->add( 'confirm-password', __( 'You must confirm your password to update this user.', 'password-confirm-action' ) );
 
 			}elseif ( empty( $_POST['current_user_pass'] ) && ! $user ){
 				$errors->add( 'confirm-password', __( 'You must confirm your password to create a user.', 'password-confirm-action' ) );
 
-			}elseif ( ! wp_check_password( $data['current_user_pass'], $current_user->user_pass ) ){
+			}elseif ( ! wp_check_password( $_POST['current_user_pass'], $current_user->user_pass ) ){
 				$errors->add( 'confirm-password', __( 'The current password you provided was not correct.', 'password-confirm-action' ) );
 			}
 		}
@@ -159,8 +161,6 @@ class PasswordConfirmAction {
 	 * @return bool                     True if the user should be prompted for a password. False otherwise.
 	 */
 	static function should_prompt_for_password( $data, $edited_user = null ){
-
-		$current_user = wp_get_current_user();
 
 		$prompt = false;
 
