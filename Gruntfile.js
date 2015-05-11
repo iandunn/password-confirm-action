@@ -145,6 +145,18 @@ module.exports = function( grunt ) {
     			clean: true,   // Check if the repo working directory is clean
         	}
     	},
+    	
+        wp_deploy: {
+        	deploy:{
+                options: {
+            		svn_user: 'stephenharris',
+            		plugin_slug: 'password-confirm-action',
+            		build_dir: 'build/password-confirm-action/',
+            		//assets_dir: 'assets/',
+            		max_buffer: 1024*1024
+                },
+        	}
+        },
     
 } );
 	
@@ -154,7 +166,7 @@ module.exports = function( grunt ) {
 
 	grunt.registerTask( 'build', [ 'test', 'pot', 'po2mo', 'wp_readme_to_markdown', 'clean', 'copy' ] );
 
-	grunt.registerTask( 'deploy', [ 'checkbranch:master', 'checkrepo:deploy', 'build', 'compress' ] );
+	grunt.registerTask( 'deploy', [ 'checkbranch:master', 'checkrepo:deploy', 'build', 'wp_deploy', 'compress' ] );
 
 	grunt.util.linefeed = '\n';
 };
