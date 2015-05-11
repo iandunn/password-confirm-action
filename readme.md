@@ -2,7 +2,7 @@
 **Contributors:** stephenharris  
 **Requires at least:** 4.2.2  
 **Tested up to:** 4.2.2  
-**Stable tag:** 0.1.1  
+**Stable tag:** 0.2.0  
 **License:** GPLv2 or later  
 
 Prompts the user for their password whenever they try to perform an action which could be used by an attacker to escalate privileges or engineer future access.
@@ -64,6 +64,9 @@ A special thanks to Human Made whose [Require Password](https://github.com/human
 
 
 ## Changelog ##
+
+### 0.2.0 ###
+* Initial release on the wordpress.org repository.
 
 ### 0.1.1 ###
 * The 0.1.0 version didn't actually work...
