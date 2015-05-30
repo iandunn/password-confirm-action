@@ -23,7 +23,7 @@
 		//Tab trapping - http://www.w3.org/TR/wai-aria-practices/#trap_focus_div
 
 		if( !modalTabOrder ){
-			//Create hierarachy of tabbable elements in the modal
+			//Create hierarchy of tabbable elements in the modal
 			modalTabOrder = wrap.find( tababbleSelector );
 		}
 	

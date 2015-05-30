@@ -79,15 +79,15 @@ class PasswordConfirmAction {
 
 			case 'user_new_form': //Creating a new user
 				$label_js = $label_no_js = __( 'Confirm your current password', 'password-confirm-action' );
-				$description_js = $description_no_js = esc_html__( 'Please cofirm your password to create a new user.', 'password-confirm-action' );
+				$description_js = $description_no_js = esc_html__( 'Please confirm your password to create a new user.', 'password-confirm-action' );
 				break;
 
 			case 'show_user_profile': //Editing user's own profile
 			case 'edit_user_profile': //Editing another user's profile
 			default:
 				$label_js = $label_no_js = __( 'Confirm your current password', 'password-confirm-action' );
-				$description_no_js = esc_html__( 'If you would like to set a new password, role or e-mail for this user, please cofirm your password here.', 'password-confirm-action' );
-				$description_js = esc_html__( 'Please cofirm your password to update this user.', 'password-confirm-action' );
+				$description_no_js = esc_html__( 'If you would like to set a new password, role or e-mail for this user, please confirm your password here.', 'password-confirm-action' );
+				$description_js = esc_html__( 'Please confirm your password to update this user.', 'password-confirm-action' );
 				break;
 
 		}
@@ -150,9 +150,9 @@ class PasswordConfirmAction {
 
 	/**
 	 * Determines whether a user should be prompted for the password
-	 * $data is an array of submitted data (by the user). This function insepcts that
-	 * submitted data to see if any changes would warrant a password challnege (i.e.
-	 * anything that could escelate the privileges of a user, create a user or change
+	 * $data is an array of submitted data (by the user). This function inspects that
+	 * submitted data to see if any changes would warrant a password challenge (i.e.
+	 * anything that could escalate the privileges of a user, create a user or change
 	 * a user's password. This includes changing an e-mail as that may be used to
 	 * chang a user's password via the forgot password feature.
 	 *

@@ -26,7 +26,7 @@ The plugin prevents the attacker from doing any of these by prompting them for t
  
 ### Caveat ###
  
-Of course by default WordPress allows adminstrative users the ability to install arbitrary plugins and themes, and edit existing plugins/themes through in-built editors. These freedoms
+Of course by default WordPress allows administrative users the ability to install arbitrary plugins and themes, and edit existing plugins/themes through in-built editors. These freedoms
 render the above solution impotent. It is outside of the immediate scope of this plugin to password protect those features, though it may be considered at later date. 
 It's the advice of the plugin author that you should disable such features in your site's `wp-config.php` by adding:
 
